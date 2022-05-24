@@ -5,7 +5,7 @@ const getProducts = async (req, res, next) => {
     let product = await Product.find();
     res.status(200).json({ product });
   } catch (err) {
-    return res.status(404).json({ message: "No Products" });
+    res.status(404).json({ message: "No Products" });
     console.log(err.message);
   }
 };
@@ -23,7 +23,7 @@ const createProducts = async (req, res, next) => {
     product = await product.save();
     res.status(201).json({ product });
   } catch (err) {
-    return res.status(500).json({ message: "Cannot add product" });
+    res.status(500).json({ message: "Cannot add product" });
     console.log(err.message);
   }
 };

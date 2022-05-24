@@ -26,6 +26,7 @@ const productSchema = new Schema({
   isFeatured: {
     type: Boolean,
   },
+  timestamps: true,
 });
 
 module.exports = mongoose.model("Product", productSchema);
